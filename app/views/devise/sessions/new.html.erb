@@ -5,11 +5,13 @@
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <fieldset>
     <div class="form-group">
-      <%= f.text_field :login, class: 'form-control', placeholder: t('.login'), autofocus: true %>
+      <label for="login"><%= t('.login')%></label>
+      <%= f.text_field :login, class: 'form-control', autofocus: true %>
     </div>
 
     <div class="form-group">
-      <%= f.password_field :password, class: 'form-control', placeholder: t('.password'), autocomplete: 'off' %>
+      <label for="password"><%= t('.password')%></label>
+      <%= f.password_field :password, class: 'form-control', autocomplete: 'off' %>
     </div>
 
     <div class="checkbox">
