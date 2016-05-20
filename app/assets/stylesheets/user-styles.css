@@ -28,7 +28,7 @@ img.right {
   margin: -8px; padding: 8px;
 }
 
-#sidebar .sidebar-title {
+.sidebar-title h3 {
   font-family: monospace;
 }
 
