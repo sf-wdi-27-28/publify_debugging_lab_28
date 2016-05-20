@@ -36,11 +36,6 @@ img.right {
   font-family: monospace;
 }
 
-#sidebar .sidebar_body ul#archives{
-
-  list-style-type: circle;
-}
-
 #sidebar .sidebar-body li {
   list-style-type: circle;
 }
