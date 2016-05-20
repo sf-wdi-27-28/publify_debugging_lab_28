@@ -28,10 +28,10 @@ img.right {
   margin: -8px; padding: 8px;
 }
 
-.sidebar-title h3 {
+#sidebar .sidebar-title {
   font-family: monospace;
 }
 
-ul {
+#sidebar .sidebar-body li {
   list-style-type: circle;
 }
