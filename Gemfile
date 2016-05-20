@@ -68,12 +68,12 @@ gem 'non-stupid-digest-assets'
 gem 'rails-observers', '~> 0.1.2'
 gem 'rails-timeago', '~> 2.0'
 gem 'rails_autolink', '~> 1.1.0'
-gem 'rake', '~> 10.5'
+gem 'rake', '~> 10.4'
 gem 'recaptcha', require: 'recaptcha/rails', branch: 'rails3'
 gem 'rubypants', '~> 0.2.0'
 gem 'twitter', '~> 5.14.0'
 gem 'uuidtools', '~> 2.1.1'
-gem 'bundler', '~> 1.12.4'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
