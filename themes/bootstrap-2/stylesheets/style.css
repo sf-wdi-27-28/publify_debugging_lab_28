@@ -78,3 +78,7 @@ body {
   padding-top: 24px;
   font-family: monospace;
 }
+
+#sidebar ul li {
+  list-style-type: circle;
+}
