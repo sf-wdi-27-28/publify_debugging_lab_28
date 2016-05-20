@@ -32,14 +32,6 @@ img.right {
   font-family: monospace;
 }
 
-#sidebar .sidebar_title {
-  font-family: monospace;
-}
-
-#sidebar .sidebar_body li {
-  list-style-type: circle;
-}
-
 #sidebar .sidebar-body li {
   list-style-type: circle;
 }
