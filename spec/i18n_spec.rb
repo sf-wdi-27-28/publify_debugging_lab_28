@@ -1,4 +1,5 @@
-require 'i18n/tasks' if RUBY_VERSION >= '2.1'
+# frozen_string_literal: true
+require 'i18n/tasks'
 
 RSpec.describe 'I18n' do
   let(:i18n) { I18n::Tasks::BaseTask.new }
@@ -6,16 +7,12 @@ RSpec.describe 'I18n' do
   let(:unused_keys) { i18n.unused_keys }
 
   it 'does not have missing keys' do
-    skip unless RUBY_VERSION >= '2.1'
-    expect(missing_keys).to(be_empty,
-                            "Missing #{missing_keys.leaves.count} i18n keys, " \
-                            "run `i18n-tasks missing' to show them")
+    expect(missing_keys).to be_empty,
+      "Missing #{missing_keys.leaves.count} i18n keys, run `i18n-tasks missing' to show them"
   end
 
   it 'does not have unused keys' do
-    skip unless RUBY_VERSION >= '2.1'
-    expect(unused_keys).to(be_empty,
-                           "#{unused_keys.leaves.count} unused i18n keys, " \
-                           "run `i18n-tasks unused' to show them")
+    expect(unused_keys).to be_empty,
+      "#{unused_keys.leaves.count} unused i18n keys, run `i18n-tasks unused' to show them"
   end
 end

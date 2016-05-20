@@ -21,8 +21,6 @@ data:
     # - config/locales/**/*.%{locale}.yml
     ## Another gem (replace %#= with %=):
     # - "<%#= %x[bundle show vagrant].chomp %>/templates/locales/%{locale}.yml"
-    - config/locales/%{locale}.yml
-    - config/locales/**/*.%{locale}.yml
 
   # Locale files to write new keys to, based on a list of key pattern => file rules. Matched from top to bottom:
   # `i18n-tasks normalize -p` will force move the keys according to these rules
@@ -31,8 +29,6 @@ data:
     # - ['{devise, simple_form}.*', 'config/locales/\1.%{locale}.yml']
     ## Catch-all default:
     # - config/locales/%{locale}.yml
-    - ['*_sidebar.*', 'config/locales/sidebars.%{locale}.yml']
-    - config/locales/%{locale}.yml
 
   ## Specify the router (see Readme for details). Valid values: conservative_router, pattern_router, or a custom class.
   # router: convervative_router
@@ -53,27 +49,16 @@ data:
 # Find translate calls
 search:
   ## Paths or `File.find` patterns to search in:
-  paths:
-   - app/
-   - lib/
-   - themes/bootstrap-2/
+  # paths:
+  #  - app/
 
   ## Root directories for relative keys resolution.
-  relative_roots:
-    - app/controllers
-    - app/helpers
-    - app/mailers
-    - app/presenters
-    - app/views
-    - lib/authors_sidebar/app/views
-    - lib/meta_sidebar/app/views
-    - lib/notes_sidebar/app/views
-    - lib/page_sidebar/app/views
-    - lib/popular_sidebar/app/views
-    - lib/search_sidebar/app/views
-    - lib/tag_sidebar/app/views
-    - lib/xml_sidebar/app/views
-    - themes/bootstrap-2/views
+  # relative_roots:
+  #   - app/controllers
+  #   - app/helpers
+  #   - app/mailers
+  #   - app/presenters
+  #   - app/views
 
   ## Files or `File.fnmatch` patterns to exclude from search. Some files are always excluded regardless of this setting:
   ##   %w(*.jpg *.png *.gif *.svg *.ico *.eot *.otf *.ttf *.woff *.woff2 *.pdf *.css *.sass *.scss *.less *.yml *.json)
@@ -101,8 +86,6 @@ search:
 # ignore_missing:
 # - 'errors.messages.{accepted,blank,invalid,too_short,too_long}'
 # - '{devise,simple_form}.*'
-ignore_missing:
-  - 'devise.*'
 
 ## Consider these keys used:
 # ignore_unused:
@@ -111,11 +94,6 @@ ignore_missing:
 # - 'simple_form.{yes,no}'
 # - 'simple_form.{placeholders,hints,labels}.*'
 # - 'simple_form.{error_notification,required}.:'
-ignore_unused:
-  - 'time.formats.*'
-  - 'layouts.default.designed_by'
-  - 'date.*'
-  - 'activerecord.errors.*'
 
 ## Exclude these keys from the `i18n-tasks eq-base' report:
 # ignore_eq_base:
@@ -127,3 +105,16 @@ ignore_unused:
 ## Ignore these keys completely:
 # ignore:
 #  - kaminari.*
+
+## Sometimes, it isn't possible for i18n-tasks to match the key correctly,
+## e.g. in case of a relative key defined in a helper method.
+## In these cases you can use the built-in PatternMapper to map patterns to keys, e.g.:
+#
+# <%#= I18n::Tasks.add_scanner 'I18n::Tasks::Scanners::PatternMapper',
+#        only: %w(*.html.haml *.html.slim),
+#        patterns: [['= title\b', '.page_title']] %>
+#
+# The PatternMapper can also match key literals via a special %{key} interpolation, e.g.:
+#
+# <%#= I18n::Tasks.add_scanner 'I18n::Tasks::Scanners::PatternMapper',
+#        patterns: [['\bSpree\.t[( ]\s*%{key}', 'spree.%{key}']] %>
