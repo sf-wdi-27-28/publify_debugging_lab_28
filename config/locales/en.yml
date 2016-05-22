@@ -762,9 +762,9 @@ en:
     - December
   devise:
     sessions:
-      fuckthis: 'A load of bullshit'
-      login: 'Login: %{login}'
-      password: 'Password: %{password}'
+      new:
+        login: 'Login'
+        password: 'Password'
   errors:
     article_type_already_exist: This article type already exists
     cant_end_with_rss_or_atom: Can't end in .rss or .atom. These are reserved for feed URLs
