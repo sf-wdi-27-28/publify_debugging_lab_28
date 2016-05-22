@@ -733,7 +733,7 @@ en:
       this_comment_has_been_flagged_for_moderator_approval: This comment has been flagged for moderator approval.  It won't appear on this blog until the author approves it
   date:
     abbr_month_names:
-    - 
+    -
     - Jan
     - Feb
     - Mar
@@ -747,7 +747,7 @@ en:
     - Nov
     - Dec
     month_names:
-    - 
+    -
     - January
     - February
     - March
@@ -760,6 +760,11 @@ en:
     - October
     - November
     - December
+  devise:
+    sessions:
+      new:
+        login: Login
+        password: Password
   errors:
     article_type_already_exist: This article type already exists
     cant_end_with_rss_or_atom: Can't end in .rss or .atom. These are reserved for feed URLs
