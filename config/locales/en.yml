@@ -1,5 +1,13 @@
 ---
 en:
+  devise:
+    sessions:
+      new:
+        login: "Login"
+        password: "Password"
+    passwords:
+      new:
+        email: "Email"  
   accounts:
     back_to: "&larr; Back to %{place}"
     back_to_login: Back to login
@@ -733,7 +741,7 @@ en:
       this_comment_has_been_flagged_for_moderator_approval: This comment has been flagged for moderator approval.  It won't appear on this blog until the author approves it
   date:
     abbr_month_names:
-    - 
+    -
     - Jan
     - Feb
     - Mar
@@ -747,7 +755,7 @@ en:
     - Nov
     - Dec
     month_names:
-    - 
+    -
     - January
     - February
     - March
